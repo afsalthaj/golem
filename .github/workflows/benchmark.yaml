@@ -1,4 +1,4 @@
-name: CI
+name: Benchmark
 on:
   issue_comment:
     types: [created]
@@ -6,9 +6,6 @@ on:
 jobs:
   run-benchmark:
     runs-on: ubuntu-latest-large
-    if: |
-      github.event_name == 'issue_comment' &&
-      contains(github.event.comment.body, 'run benchmark')
     steps:
       - name: Checkout
         uses: actions/checkout@v4
